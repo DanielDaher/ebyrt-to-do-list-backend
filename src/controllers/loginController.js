@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 const usersModel = require('../models/usersModel');
 
-   const secret = 'seusecretdetoken';
+require('dotenv').config();
+
+const secret = process.env.TOKEN_SECRET;
 
    const validateInputFields = (userName, password) => {
     if (!userName || !password) return true;
